@@ -1,0 +1,19 @@
+id: ibgp-session-down
+title: "The Middle Router Goes Quiet"
+description: >
+  R2 and R4 can no longer see each other's iBGP-learned routes.
+difficulty: 2
+target_router: R3
+fault_commands:
+  - router bgp 65030
+  - no neighbor 10.0.0.4 remote-as 65030
+fix_commands:
+  - router bgp 65030
+  - neighbor 10.0.0.4 remote-as 65030
+  - neighbor 10.0.0.4 update-source Loopback0
+validation:
+  router: R3
+  min_established_neighbors: 2
+hints:
+  - cost: 10
+    text: "Check R3's iBGP neighbors - one may be missing entirely."

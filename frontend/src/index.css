@@ -1,0 +1,45 @@
+@import 'tailwindcss';
+
+/* Lab console palette. Router health maps onto ok/warn/down; everything else is
+   neutral so the status colours are the only saturated things on the page. */
+@theme {
+  --color-ink-950: #0b0d12;
+  --color-ink-900: #11141b;
+  --color-ink-850: #161a23;
+  --color-ink-800: #1c212c;
+  --color-ink-700: #2a3140;
+  --color-ink-600: #3b4354;
+  --color-ink-400: #7c869c;
+  --color-ink-200: #b9c1d1;
+  --color-ink-50: #eef1f6;
+
+  --color-ok: #34d399;
+  --color-warn: #fbbf24;
+  --color-down: #f87171;
+  --color-brand: #60a5fa;
+
+  --font-mono:
+    ui-monospace, 'Cascadia Code', Consolas, 'Courier New', monospace;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-ink-950);
+  color: var(--color-ink-200);
+  font-family:
+    system-ui,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+}

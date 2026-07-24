@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+netmiko
+ntc-templates
+pydantic
+pyyaml
+anthropic
+python-dotenv

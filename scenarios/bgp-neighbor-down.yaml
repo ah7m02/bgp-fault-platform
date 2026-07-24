@@ -1,0 +1,21 @@
+id: bgp-neighbor-down
+title: "R1's Route Vanishes"
+description: >
+  R1 can no longer see routes beyond R2. Something happened to the
+  eBGP session between R1 and R2.
+difficulty: 1
+target_router: R2
+fault_commands:
+  - router bgp 65030
+  - no neighbor 10.12.0.1 remote-as 65010
+fix_commands:
+  - router bgp 65030
+  - neighbor 10.12.0.1 remote-as 65010
+validation:
+  router: R1
+  min_established_neighbors: 1
+hints:
+  - cost: 10
+    text: "Check R2's BGP neighbor configuration toward R1."
+  - cost: 25
+    text: "The neighbor statement itself may be missing entirely, not just shut down."

@@ -1,0 +1,18 @@
+id: interface-shutdown
+title: "R5 Falls Off the Map"
+description: >
+  R5 is completely unreachable via BGP. Check the physical layer first.
+difficulty: 1
+target_router: R4
+fault_commands:
+  - interface Ethernet0/2
+  - shutdown
+fix_commands:
+  - interface Ethernet0/2
+  - no shutdown
+validation:
+  router: R4
+  min_established_neighbors: 3
+hints:
+  - cost: 10
+    text: "Check interface status on R4 toward R5 — is it administratively down?"
